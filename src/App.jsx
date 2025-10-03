@@ -9,6 +9,7 @@ import Support from './pages/Support.jsx';
 import XboxGamepress from './pages/XboxGamepress.jsx';
 import Login from './pages/Login.jsx';
 import Download from './pages/Download.jsx';
+import Games from './pages/Games.jsx';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <main className="container flex-grow mx-auto px-4 py-8">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/games" element={<Games />} />
             <Route path="/news" element={<News />} />
             <Route path="/esports" element={<Esports />} />
             <Route path="/support" element={<Support />} />

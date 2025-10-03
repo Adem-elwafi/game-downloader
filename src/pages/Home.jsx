@@ -30,19 +30,22 @@ const latestNews = [
     id: 1,
     title: 'New DLC Announced for Cyberpunk 2077',
     summary: 'CD Projekt Red reveals exciting new content coming next month.',
-    date: '2023-11-15'
+    date: '2023-11-15',
+    image: 'https://tse1.mm.bing.net/th/id/OIP.fkKAA6eeDLMw3UgsfwHCHgHaEK?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3'
   },
   {
     id: 2,
     title: 'Elden Ring Wins Game of the Year',
     summary: 'FromSoftware\'s masterpiece takes home the top prize at The Game Awards.',
-    date: '2023-12-01'
+    date: '2023-12-01',
+    image: 'https://fextralife.com/wp-content/uploads/2022/12/Elden-Ring-GOTY-2022-2048x1106.jpg'
   },
   {
     id: 3,
     title: 'Upcoming Xbox Exclusive Showcase',
     summary: 'Microsoft teases new Xbox Game Studios titles for 2024.',
-    date: '2023-11-20'
+    date: '2023-11-20',
+    image: 'https://tse4.mm.bing.net/th/id/OIP.o9Kz6CLUMt7-O_IhkD6EVwHaEK?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3'
   }
 ];
 
@@ -119,9 +122,15 @@ function Home() {
           <div className="flex overflow-x-auto pb-6 space-x-4">
             {latestNews.map((news) => (
               <div key={news.id} className="flex-shrink-0 w-80 bg-white p-6 rounded-lg shadow">
-                <div className="h-40 bg-gray-200 mb-4 rounded flex items-center justify-center text-gray-500">
-                  News Image
-                </div>
+                <img 
+                  src={news.image} 
+                  alt={news.title}
+                  className="w-full h-40 object-cover rounded"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = 'https://via.placeholder.com/400x225?text=News+Image';
+                  }}
+                />
                 <h3 className="text-xl font-bold mb-2">{news.title}</h3>
                 <p className="text-gray-600 mb-4">{news.summary}</p>
                 <div className="text-sm text-gray-500">{news.date}</div>
