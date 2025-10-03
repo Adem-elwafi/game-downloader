@@ -13,7 +13,7 @@ import Download from './pages/Download.jsx';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100">
+      <div className="min-h-screen  bg-gray-100">
         <Navbar />
         <main className="container flex-grow mx-auto px-4 py-8">
           <Routes>
