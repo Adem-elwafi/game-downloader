@@ -4,11 +4,11 @@ import './App.css';
 import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
 import News from './pages/News.jsx';
-import Esports from './pages/Esports.jsx';
+import Esports from './pages/EsportsNew.jsx';
 import SupportNew from './pages/SupportNew.jsx';
 import XboxGamepress from './pages/XboxGamepress.jsx';
-import Login from './pages/Login.jsx';
-import Download from './pages/Download.jsx';
+import LoginNew from './pages/LoginNew.jsx';
+import DownloadNew from './pages/DownloadNew.jsx';
 import Games from './pages/Games.jsx';
 
 function App() {
@@ -24,8 +24,8 @@ function App() {
             <Route path="/esports" element={<Esports />} />
             <Route path="/support" element={<SupportNew />} />
             <Route path="/xboxgamepress" element={<XboxGamepress />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/download" element={<Download />} />
+            <Route path="/login" element={<LoginNew />} />
+            <Route path="/download" element={<DownloadNew />} />
             {/* Add a catch-all route for 404 pages */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

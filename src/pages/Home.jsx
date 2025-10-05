@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Sample game data - replace with actual data from your backend
 const featuredGames = [
@@ -57,6 +58,8 @@ const esportsTeams = [
 ];
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="space-y-16 pb-16">
       {/* Hero Section */}
@@ -74,13 +77,14 @@ function Home() {
           justifyContent: 'center',
           textAlign: 'center'
         }}
+        
       >
         <div className="container mx-auto z-10">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Download the Best Games Instantly</h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
             Your gateway to top-rated games, esports updates, and exclusive Xbox content
           </p>
-          <button className="bg-[var(--color-highlight)] hover:bg-yellow-400 text-gray-900 font-bold py-3 px-8 rounded-full text-lg transition-colors">
+          <button onClick={() => navigate('/games')} className="bg-[var(--color-highlight)] cursor-pointer hover:bg-yellow-400 text-gray-900 font-bold py-3 px-8 rounded-full text-lg transition-colors">
             Explore Games
           </button>
         </div>
